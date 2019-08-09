@@ -4,7 +4,7 @@ import {Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 
 
-function UserForm(){
+function UserForm({values,status}){
 
 
     return (
@@ -32,12 +32,18 @@ function UserForm(){
 
 
 const FormikLoginForm = withFormik({
-    mapPropsToValues({name, password}){
+    mapPropsToValues({username, password}){
         return{
-            name: name || '', 
+            username: username || '', 
             password: password || '',
         }
+    },
+
+    //get setStatus
+    handleSubmit(values){
+    console.log(values)
     }
+
 })(UserForm)
 
 export default FormikLoginForm;
