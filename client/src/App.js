@@ -14,11 +14,28 @@ class App extends React.Component{
   
   }
 
+  componentDidMount(){
+    axios
+     .get("http://localhost:5000/api/restricted/data")
+     .then(res => {
+         console.log('Data Received', res)
+         this.setState({data: res.data})
+     })   
+     .catch(err => {
+         console.log('Request failed')
+     })
+  }
 
   render(){
     return (
     <div className="App">
      <UserForm />
+     {this.state.data
+    ? this.state.data.map(object => (
+      <div key={object.id}>{object.name}</div>
+    )): null}
+
+
     </div>
   );
   }
