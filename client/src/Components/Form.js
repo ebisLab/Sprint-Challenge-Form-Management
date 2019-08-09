@@ -9,21 +9,11 @@ function UserForm({ errors, touched, values, status }){
     const[dataInfo, setDataInfo] = useState([]);
 
     useEffect(() => {
-    //    const getData = () => {
-    //   axios
-    //     .get('http://localhost:5000/api/restricted/data')
-    //     .then(response => {
-    //       console.log(response.data)
-    //       setDataInfo(response.data);
-    //     })
-    //     .catch(error => {
-    //       console.error('Server Error', error);
-    //     });
-    // }
-    
-    // getData();
+   if(status){
+       setUsers([...users, status]);
+   }
    
-    })
+    }, [status])
 console.log(errors, 'errors')
 
 
@@ -70,7 +60,7 @@ const FormikLoginForm = withFormik({
     }),
 
     //get setStatus
-    handleSubmit(values){
+    handleSubmit(values, {setStatus}){
     console.log(values)
 
     //form submission HTTP request
@@ -80,7 +70,7 @@ const FormikLoginForm = withFormik({
             // console.log('Set Status Area')
             console.log('res', res.data)
             // resetForm();
-            // setStatus(res.data)
+            setStatus(res.data)
         })
         
         .catch(err => console.log(err) )
