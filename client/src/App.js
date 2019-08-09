@@ -8,7 +8,7 @@ class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      data: []
+      data: ''
     }
 
   
@@ -30,10 +30,10 @@ class App extends React.Component{
     return (
     <div className="App">
      <UserForm />
-     {this.state.data
+     {/* {this.state.data
     ? this.state.data.map(object => (
       <div key={object.id}>{object.name}</div>
-    )): null}
+    )): null} */}
 
 
     </div>

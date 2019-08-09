@@ -15,7 +15,8 @@ function UserForm({ errors, touched, values, status }){
    
     }, [status])
 // console.log(errors, 'errors')
-
+console.log('users', users)
+console.log('status', status)
 
     return (
         <div>
@@ -35,9 +36,14 @@ function UserForm({ errors, touched, values, status }){
             name="password"
             placeholder="password"
           />
-          <button>Login</button>
+          <button type="submit">Login</button>
             </Form>
-            
+            <section>
+            {users.map(user => (
+        <p key={user.token}>Welcome {values.username}</p>
+        ))}
+        {/* {users.map(user => console.log('Hello', values.username))} */}
+            </section>
             {/* <Field>Hello</Field> */}
             </div>
     );
@@ -48,7 +54,7 @@ const FormikLoginForm = withFormik({
     mapPropsToValues({username, password}){
         return{
             username: username || '', 
-            password: password || '',
+            password: password || ''
         }
     },
 
@@ -62,6 +68,7 @@ const FormikLoginForm = withFormik({
     //get setStatus
     handleSubmit(values, {setStatus}){
     console.log(values)
+    console.log(values.username)
 
     //form submission HTTP request
     axios
