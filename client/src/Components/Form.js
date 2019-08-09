@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Form, Field, withFormik} from 'formik';
+import {Form, Field, withFormik, setNestedObjectValues} from 'formik';
 import * as Yup from 'yup';
+import '../index.css';
 
 
-function UserForm({ errors, touched, values, status }){
+function UserForm({ errors, touched, values, status, name }){
     const[users, setUsers] = useState([]);
     // const[dataInfo, setDataInfo] = useState([]);
 
@@ -16,20 +17,19 @@ function UserForm({ errors, touched, values, status }){
     }, [status])
 // console.log(errors, 'errors')
 console.log('users', users)
-console.log('status', status)
 
     return (
         <div>
             <h1>Form Section</h1>
-           
+            <div className="forminput">
             <Form>
-            {touched.username && errors.username && <p>{errors.username}</p>}
+            {touched.username && errors.username && <span className="error">{errors.username}</span>}
             <Field className="user-input"
             type="text"
             name="username"
             placeholder="username"
           />
-            {touched.password && errors.password && <p>{errors.password}</p>}
+            {touched.password && errors.password && <span className="error">{errors.password}</span>}
 
           <Field
             type="text"
@@ -40,11 +40,21 @@ console.log('status', status)
             </Form>
             <section>
             {users.map(user => (
-        <p key={user.token}>Welcome {values.username}</p>
+        <div key={user.token}>
+            <h2>Welcome {values.username}!</h2>
+            <p>{name}</p>
+            
+            {/* {this.state.isLoggedIn
+    ? this.state.data.map(object => (
+      <Show name={object.name}/>
+    )): null} */}
+
+
+            </div>
         ))}
-        {/* {users.map(user => console.log('Hello', values.username))} */}
+        <p></p>
             </section>
-            {/* <Field>Hello</Field> */}
+            </div>
             </div>
     );
 };
@@ -77,6 +87,7 @@ const FormikLoginForm = withFormik({
             // console.log('Set Status Area')
             console.log('res', res.data)
             // resetForm();
+    
             setStatus(res.data)
         })
         

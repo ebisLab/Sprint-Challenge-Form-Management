@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.error {
+  font-size: 10px;
+  line-height: 15px;
+  color: #cc0033;
+  padding: 2px;
+  margin: 20px 0px 0px 0px;
+  position: absolute;
+}
+
+.accept{
+  margin: 20px 0px 0px -83px;
+}
+
+.errors .error {
+  display: inline-block;
+}
+
+.forminput{
+  display: inline-block;
+}
