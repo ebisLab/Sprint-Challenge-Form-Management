@@ -4,7 +4,7 @@ import {Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 
 
-function UserForm({values,status}){
+function UserForm({ errors,values,status }){
 
 
     return (
@@ -12,6 +12,8 @@ function UserForm({values,status}){
             <h1>Form Section</h1>
            
             <Form>
+            {errors.username && <p>{errors.username}</p>}
+
             <Field className="user-input"
             type="text"
             name="username"
