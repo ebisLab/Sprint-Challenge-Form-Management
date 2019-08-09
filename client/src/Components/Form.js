@@ -12,12 +12,12 @@ function UserForm(){
             <h1>Form Section</h1>
            
             <Form>
-            <input
+            <Field
             type="text"
             name="username"
             placeholder="username"
           />
-          <input
+          <Field
             type="text"
             name="password"
             placeholder="password"
