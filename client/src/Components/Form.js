@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Form, Field, withFormik, Formik, ErrorMessage} from 'formik';
+import {Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 
 
@@ -12,7 +12,7 @@ function UserForm(){
             <h1>Form Section</h1>
            
             <Form>
-            <Field
+            <Field className="user-input"
             type="text"
             name="username"
             placeholder="username"
@@ -25,7 +25,7 @@ function UserForm(){
           <button>Login</button>
             </Form>
             
-            
+            {/* <Field>Hello</Field> */}
             </div>
     );
 };
@@ -40,4 +40,4 @@ const FormikLoginForm = withFormik({
     }
 })(UserForm)
 
-export default UserForm;
+export default FormikLoginForm;
