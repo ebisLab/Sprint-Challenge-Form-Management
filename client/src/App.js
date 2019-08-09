@@ -3,12 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 import UserForm from './Components/Form'
 
-function App() {
-  return (
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      data: ''
+    }
+  }
+
+  render(){
+    return (
     <div className="App">
      <UserForm />
     </div>
   );
+  }
+  
 }
 
 export default App;
