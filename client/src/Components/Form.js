@@ -39,6 +39,13 @@ const FormikLoginForm = withFormik({
         }
     },
 
+    //Yup validation
+    validationSchema: Yup.object().shape({
+        username: Yup.string().required('Hold on hommie!'),
+        password: Yup.string().required('Hold on hommie!'),
+        
+    }),
+
     //get setStatus
     handleSubmit(values){
     console.log(values)
