@@ -1,11 +1,22 @@
 # Answers
 
-- [ ] What are the required parts of class components?
+- **[ ] What are the required parts of class components**
 
-- [ ] Name at least three lifecycle methods?
+- extends React.Component parent class.
+- constructor
+- super
 
-- [ ] Why are forms used so often in web applications and software?
+- **[ ] Name at least three lifecycle methods?**
+- componentDidMount
+- compenentDidUpdate
+- compoenentWillUnmount
 
-- [ ] What advantages are there by using a forms library like Formik?
+- **[ ] Why are forms used so often in web applications and software?**
+- to get data from the users. User data is very valuable.
 
-- [ ] Why do we write tests for our apps?
+- **[ ] What advantages are there by using a forms library like Formik?**
+- cuts away more complex situations from error messages, validation, and setting up state. 
+
+- **[ ] Why do we write tests for our apps?**
+- Finds bugs early on, and faster. 
+- Encourages to write better code.
