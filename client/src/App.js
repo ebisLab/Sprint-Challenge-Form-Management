@@ -10,7 +10,7 @@ class App extends React.Component{
     super();
     this.state = {
       data: '',
-      isLoggedIn: false
+
     }
 
   
@@ -36,7 +36,7 @@ class App extends React.Component{
   render(){
     return (
     <div className="App">
-     <UserForm isLoggedIn={this.state.isLoggedIn}/>
+     <UserForm data={this.state.data}/>
      {/* {this.state.data
     ? this.state.data.map(object => (
       <div key={object.id}>{object.name}</div>
@@ -46,10 +46,10 @@ class App extends React.Component{
        <UserForm
         name={object.name}/>
       )): null} */}
-       {this.state.data
+       {/* {this.state.data
     ? this.state.data.map(object => (
       <Show name={object.name}/>
-    )): null}
+    )): null} */}
 
 
     </div>

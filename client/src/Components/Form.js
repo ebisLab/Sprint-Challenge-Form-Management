@@ -3,15 +3,19 @@ import axios from 'axios';
 import {Form, Field, withFormik, setNestedObjectValues} from 'formik';
 import * as Yup from 'yup';
 import '../index.css';
+import Show from './Show'
 
 
-function UserForm({ errors, touched, values, status, name }){
+function UserForm({ errors, touched, values, status, name, data }){
     const[users, setUsers] = useState([]);
     // const[dataInfo, setDataInfo] = useState([]);
+
+    const[isLoggedIn, setIsLoggedIn] = useState(false) ;
 
     useEffect(() => {
    if(status){
        setUsers([...users, status]);
+       setIsLoggedIn(true)
    }
    
     }, [status])
@@ -42,12 +46,16 @@ console.log('users', users)
             {users.map(user => (
         <div key={user.token}>
             <h2>Welcome {values.username}!</h2>
-            <p>{name}</p>
+            {/* <p>{name}</p> */}
             
             {/* {this.state.isLoggedIn
     ? this.state.data.map(object => (
       <Show name={object.name}/>
     )): null} */}
+    {data && isLoggedIn
+    ? data.map(object => (
+      <Show name={object.name}/>
+    )): null}
 
 
             </div>
@@ -87,7 +95,6 @@ const FormikLoginForm = withFormik({
             // console.log('Set Status Area')
             console.log('res', res.data)
             // resetForm();
-    
             setStatus(res.data)
         })
         
