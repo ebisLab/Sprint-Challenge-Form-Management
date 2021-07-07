@@ -22,6 +22,8 @@ In the challenge for this Sprint, you will demonstrate proficiency by creating a
 
 ## Self-Study/Essay Questions
 
+**ANSWER IS [HERE](https://github.com/ebisLab/Sprint-Challenge-Form-Management/blob/eunice-baiden/ANSWERS.md)**
+
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What are the required parts of class components?
